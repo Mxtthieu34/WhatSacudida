@@ -2447,12 +2447,9 @@
         }
 
         function garantizarCuentaAdmin() {
-    let registroGlobal = leerJSONLocal("sacudida_registro_global", {});
-    const cuenta = registroGlobal['mxtthieu'] || {};
-    if (!cuenta.pass || !cuenta.email) {
-        registroGlobal['mxtthieu'] = { usuario: 'mxtthieu', foto: cuenta.foto || "", email: '77847004@colegiocima.edu.pe', pass: hashPassword('M3009120790.') };
-        localStorage.setItem("sacudida_registro_global", JSON.stringify(registroGlobal));
-    }
+    // Sacudida no pre-carga cuentas. Regístrate desde la app la primera vez.
+    return;
+
 
         }
 
